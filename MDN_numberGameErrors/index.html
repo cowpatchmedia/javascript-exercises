@@ -45,7 +45,7 @@
 
     <script>
       let randomNumber = Math.floor(Math.random()*100)+1;
-        console.log(randomNumber);
+        console.trace(randomNumber);
       const guesses = document.querySelector(".guesses");
       const lastResult = document.querySelector(".lastResult");
       const lowOrHi = document.querySelector(".lowOrHi");
@@ -112,7 +112,7 @@
         lastResult.style.backgroundColor = "white";
 
         randomNumber = Math.floor(Math.random()*100) + 1;
-        console.log(randomNumber);
+        console.trace(randomNumber);
       }
     </script>
   </body>

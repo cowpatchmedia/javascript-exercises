@@ -32,17 +32,35 @@
 
     <script>
       const link = document.querySelector("ul");
-      const link = document.querySelector("input");
-      const link = document.querySelector("button");
+      const input = document.querySelector("input");
+      const button = document.querySelector("button");
 
-      const submit(ingredients) => {
-        preventDefault();
-        const ingredients = ingredient;
-        ingredient = "";
-        submit.
+      function handleClick(event) {
+        event.preventDefault();
+        const ingredient = input.value.trim();
+        if (ingredient === "") return;
 
+        const newList = document.createElement("li");
+        const newSpan = document.createElement("span");
+        const newButton = document.createElement("button");
+
+        newSpan.textContent = ingredient;
+        newButton.textContent = "Delete;"
+
+        newList.appendChild(newSpan);
+        newList.appendChild(newButton);
+        link.appendChild(newList);
+
+        newButton.addEventListener("click", () => {
+          newList.remove();
+        });
+
+        input.value="";
+        input.focus();
 
       };
+
+      button.addEventListener("click",handleClick);
 
     </script>
   </body>
